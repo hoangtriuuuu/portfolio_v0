@@ -32,7 +32,7 @@
     .nav-cta:hover { background:var(--crimson); }
 
     /* HERO */
-    .hero { min-height:100vh; padding:110px 48px 80px; display:grid; grid-template-columns:1fr 240px; gap:60px; align-items:center; }
+    .hero { min-height:100vh; padding:110px 48px 80px; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(280px,360px); gap:44px; align-items:center; justify-content:center; }
     .hero-tag { display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
     .hero-tag span { width:28px; height:1px; background:var(--muted); }
     .hero-greeting { font-size:clamp(16px,1.8vw,20px); font-weight:300; color:var(--muted); margin-bottom:6px; }
@@ -47,8 +47,8 @@
     .btn-secondary:hover { color:var(--crimson); border-color:var(--crimson); }
 
     /* PHOTO */
-    .hero-photo-wrap { display:flex; align-items:flex-end; justify-content:center; padding-top:20px; }
-    .hero-photo { width:clamp(200px,18vw,260px); aspect-ratio:3/4; border-radius:160px 160px 120px 120px; overflow:hidden; position:relative; box-shadow:0 24px 60px rgba(20,27,39,.18); }
+    .hero-photo-wrap { display:flex; align-items:center; justify-content:center; padding-top:35px; }
+    .hero-photo { width:clamp(260px,22vw,360px); aspect-ratio:3/4; border-radius:160px 160px 120px 120px; overflow:hidden; position:relative; box-shadow:0 24px 60px rgba(20,27,39,.18); transform:scale(1.06); }
     .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
     .hero-photo-badge { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:var(--crimson); color:#fff; font-size:11px; font-weight:500; letter-spacing:.06em; padding:6px 14px; border-radius:100px; white-space:nowrap; }
 
@@ -337,8 +337,12 @@
     @media(max-width:900px) {
       nav { padding:16px 24px; }
       .nav-links { display:none; }
-      .hero { padding:90px 24px 60px; grid-template-columns:1fr; }
-      .hero-photo-wrap { display:none; }
+      .hero { padding:90px 24px 60px; grid-template-columns:1fr; justify-items:center; text-align:center; }
+      .hero-left { width:100%; max-width:640px; }
+      .hero-desc { max-width:100%; }
+      .hero-actions { justify-content:center; }
+      .hero-photo-wrap { display:flex; padding-top:10px; }
+      .hero-photo { transform:scale(0.96); }
       .stats-bar { padding:24px; flex-wrap:wrap; }
       .stat { min-width:50%; border-right:none; border-bottom:1px solid rgba(255,255,255,.1); padding:12px 0; }
       .stat:last-child,.stat:nth-child(2n) { border-right:none; }
@@ -442,6 +446,36 @@
         <span class="tag">Phân tích yêu cầu</span>
         <span class="tag">C# WinForms</span>
         <span class="tag">Video Editing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Background</p>
+        <h2 class="section-title">Học vấn</h2>
+      </div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Hiện tại
+        </div>
+        <div class="edu-school">Cao đẳng FPT Polytechnic</div>
+        <div class="edu-major">Phát triển phần mềm</div>
+        <div class="edu-period">2024 — 7/2026</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-badge" style="color:var(--muted)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Trước đây
+        </div>
+        <div class="edu-school">Đại học Tôn Đức Thắng</div>
+        <div class="edu-major">Kiến trúc cảnh quan</div>
+        <div class="edu-period">2022 — 11/2023</div>
       </div>
     </div>
   </section>
@@ -568,36 +602,6 @@
   </section>
 
   <hr class="divider-bar"/>
-
-  <!-- EDUCATION -->
-  <section class="education" id="education">
-    <div class="section-header">
-      <div>
-        <p class="section-label">Background</p>
-        <h2 class="section-title">Học vấn</h2>
-      </div>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Hiện tại
-        </div>
-        <div class="edu-school">Cao đẳng FPT Polytechnic</div>
-        <div class="edu-major">Phát triển phần mềm</div>
-        <div class="edu-period">2024 — 7/2026</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-badge" style="color:var(--muted)">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Trước đây
-        </div>
-        <div class="edu-school">Đại học Tôn Đức Thắng</div>
-        <div class="edu-major">Kiến trúc cảnh quan</div>
-        <div class="edu-period">2022 — 11/2023</div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
